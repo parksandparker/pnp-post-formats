@@ -22,7 +22,7 @@ The supported post formats are as below:
 * Video
 * Audio
 
-This plugin is intended for use in WordPress themes by (Parks & Parker)[http://parksandparker.com]
+This plugin is intended for use in WordPress themes by [Parks & Parker](http://parksandparker.com)
 
 == Installation ==
 
