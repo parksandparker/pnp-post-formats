@@ -1,17 +1,5 @@
 <?php
 /**
- * Parks & Parkers Post Formats
- * 
- * Adds extra fields & options for post formats
- */
-
-/**
- * TODO
- * Use postbox id as base for field ID and field NAME !important!
- * Find out why postbox all using same (last) fields
- */
-
-/**
 Plugin Name: Parks & Parker Post Formats
 Description: Adds extra fields to post formats
 Plugin URI:  http://parksandparker.com

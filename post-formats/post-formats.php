@@ -279,14 +279,14 @@ $metaboxes = array();
 // Standard
 $metaboxes[] = array(
 	'id'        => 'pnppf-standard',
-	'title'     =>  __('Standard Format Settings', 'a10e'),
+	'title'     =>  __('Standard Format Settings', 'p12r'),
 	'post_type' => 'post',
 	'context'   => 'normal',
 	'priority'  => 'high',
 	'fields'    => array(
 		array(
 			'id'      => 'pnppf_standard',
-			'desc'    => __('Select yes to display featured thumbnail.','a10e'),
+			'desc'    => __('Select yes to display featured thumbnail.','p12r'),
 			'type'    => 'select',
 			'std'     => '1',
 			'options' => array('yes' => 'Yes', 'no' => 'No')
@@ -297,14 +297,14 @@ $metaboxes[] = array(
 // Link
 $metaboxes[] = array(
 	'id'        => 'pnppf-link',
-	'title'     =>  __('Link Format Settings', 'a10e'),
+	'title'     =>  __('Link Format Settings', 'p12r'),
 	'post_type' => 'post',
 	'context'   => 'normal',
 	'priority'  => 'high',
 	'fields'    => array(
 		array(
 			'id'   => 'pnppf_link',
-			'desc' => __('Enter the link','a10e'),
+			'desc' => __('Enter the link','p12r'),
 			'type' => 'text',
 			'std'  => ''
 		)
@@ -314,21 +314,21 @@ $metaboxes[] = array(
 // Gallery
 $metaboxes[] = array(
 	'id'        => 'pnppf-gallery',
-	'title'     =>  __('Gallery Format Settings', 'a10e'),
+	'title'     =>  __('Gallery Format Settings', 'p12r'),
 	'post_type' => 'post',
 	'context'   => 'normal',
 	'priority'  => 'high',
 	'fields'    => array(
 		array(
 			'id'      => 'pnppf_gallery_0',
-			'desc'    => __('Enter crop height, or leave empty to not crop (default: 400)','a10e'),
+			'desc'    => __('Enter crop height, or leave empty to not crop (default: 400)','p12r'),
 			'type'    => 'input_number',
 			'std'     => '400',
 			'options' => array('step' => 10)
 		),
 		array(
 			'id'      => 'pnppf_gallery_1',
-			'desc'    => __('Use custom gallery','a10e'),
+			'desc'    => __('Use custom gallery','p12r'),
 			'type'    => 'checkbox',
 			'std'     => 0
 		),
@@ -338,14 +338,14 @@ $metaboxes[] = array(
 // Quote
 $metaboxes[] = array(
 	'id'        => 'pnppf-quote',
-	'title'     =>  __('Quote Format Settings', 'a10e'),
+	'title'     =>  __('Quote Format Settings', 'p12r'),
 	'post_type' => 'post',
 	'context'   => 'normal',
 	'priority'  => 'high',
 	'fields'    => array(
 		array(
 			'id'      => 'pnppf_quote',
-			'desc'    => __('Enter the quote author or reference to the quote (optional)','a10e'),
+			'desc'    => __('Enter the quote author or reference to the quote (optional)','p12r'),
 			'type'    => 'text',
 			'std'     => ''
 		),
@@ -355,14 +355,14 @@ $metaboxes[] = array(
 // Video
 $metaboxes[] = array(
 	'id'        => 'pnppf-video',
-	'title'     =>  __('Video Format Settings', 'a10e'),
+	'title'     =>  __('Video Format Settings', 'p12r'),
 	'post_type' => 'post',
 	'context'   => 'normal',
 	'priority'  => 'high',
 	'fields'    => array(
 		array(
 			'id'   => 'pnppf_video',
-			'desc' => __('Enter embed code from e.g. Youtube or Vimeo', 'a10e'),
+			'desc' => __('Enter embed code from e.g. Youtube or Vimeo', 'p12r'),
 			'type' => 'textarea',
 			'std' => '',
 		),
@@ -372,14 +372,14 @@ $metaboxes[] = array(
 // Audio
 $metaboxes[] = array(
 	'id'        => 'pnppf-audio',
-	'title'     =>  __('Audio Format Settings', 'a10e'),
+	'title'     =>  __('Audio Format Settings', 'p12r'),
 	'post_type' => 'post',
 	'context'   => 'normal',
 	'priority'  => 'high',
 	'fields'    => array(
 		array(
 			'id'   => 'pnppf_audio',
-			'desc' => __('Enter embed code from e.g. Soundcloud', 'a10e'),
+			'desc' => __('Enter embed code from e.g. Soundcloud', 'p12r'),
 			'type' => 'textarea',
 			'std' => '',
 		)
