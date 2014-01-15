@@ -5,7 +5,7 @@ Description: Adds extra fields to post formats
 Plugin URI:  http://parksandparker.com
 Author:      SyamilMJ
 Author URI:  http://parksandparker.com
-Version:     0.1
+Version:     0.2
 License:     GPL2
 Text Domain: p12r
 Domain Path: lang
@@ -37,4 +37,3 @@ Domain Path: lang
 define('PNPPF_DIR_URL', plugin_dir_url(__FILE__));
 
 require 'post-formats/post-formats.php';
-require 'custom-gallery/custom-gallery.php';

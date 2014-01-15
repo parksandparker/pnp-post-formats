@@ -22,6 +22,7 @@ if(!class_exists('PNP_Post_Formats')) {
 				add_action('add_meta_boxes', array($this, 'add_box'));
 				add_action('admin_enqueue_scripts', array($this, 'enqueue_cssjs') );
 				add_action('save_post', array($this, 'save_box'));
+				add_action('wp_ajax_pnpcg_get_thumbnail', array($this, 'get_thumbnail'));
 			}
 
 		}
@@ -68,7 +69,7 @@ if(!class_exists('PNP_Post_Formats')) {
 		function show_box($post, $fields) {
 
 			// Use nonce for verification
-			echo '<input type="hidden" name="pnp_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+			echo '<input type="hidden" id="pnppf-nonce" name="pnp_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 
 			$fields = $fields['args'];
 
@@ -111,15 +112,21 @@ if(!class_exists('PNP_Post_Formats')) {
 				if($option['post_type'] == $post->post_type) {
 					foreach($option['fields'] as $field) {
 						$old = get_post_meta($post_id, $field['id'], true);
-						$new = $_POST[$field['id']];
-				 
+
+						if($field['id'] == 'pnppf_custom_gallery') {
+							$new = $_POST['pnpcg_images'];
+						} else {
+							$new = $_POST[$field['id']];
+						}
+
 						if ($new && $new != $old) {
 							if(is_array($new)) {
-							
+
 								$_new = array();
 								foreach($new as $key => $value){
 									$_new[$key] = stripslashes(htmlspecialchars($value));
 								}
+
 								update_post_meta($post_id, $field['id'], $_new);
 								
 							} else {
@@ -148,8 +155,26 @@ if(!class_exists('PNP_Post_Formats')) {
 			if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
 				if ( in_array($post->post_type, $this->post_types) ) {
 					wp_enqueue_script('pnp-post-formats-js', PNPPF_DIR_URL . 'post-formats/post-formats.js' );
+					wp_enqueue_style('pnp-post-formats-css', PNPPF_DIR_URL . 'post-formats/post-formats.css');
 				}
 			}
+		}
+
+		// ajax call to get thumbnail url
+		function get_thumbnail() {
+
+			$nonce = $_POST['security'];	
+
+			if (! wp_verify_nonce($nonce, basename(__FILE__)) ) die('Invalid nonce');
+
+			$attachment_id = $_POST['id'];
+
+			$image = wp_get_attachment_image_src( $attachment_id, 'pnp-gallery-thumb' );
+
+			echo $image[0];
+
+			exit();
+
 		}
 
 	}
@@ -176,7 +201,6 @@ function pnp_post_format_field($field) {
 			    	'<label for="'. $field['id'] .'">'.
 			    	    '<span style=" display:block; color:#777; margin:0 0 10px;">'. $field['desc'].'</span>'.
 			    	'</label>';
-
 
 				echo '<input type="number" step="'. $step .'" name="', $field['id'], '" id="', $field['id'], '" value="', ($meta !== false) ? $meta : $field['std'], '" size="8" />';
 
@@ -269,6 +293,12 @@ function pnp_post_format_field($field) {
 
 		break;
 
+		case 'gallery':
+
+			require 'custom-gallery.php';
+
+		break;
+
 
 	}// end switch
 
@@ -321,16 +351,16 @@ $metaboxes[] = array(
 	'fields'    => array(
 		array(
 			'id'      => 'pnppf_gallery_0',
-			'desc'    => __('Enter crop height, or leave empty to not crop (default: 400)','p12r'),
+			'desc'    => __('Enter crop height, or leave empty to not crop (recommended: 400)','p12r'),
 			'type'    => 'input_number',
-			'std'     => '400',
+			'std'     => 400,
 			'options' => array('step' => 10)
 		),
 		array(
-			'id'      => 'pnppf_gallery_1',
-			'desc'    => __('Use custom gallery','p12r'),
-			'type'    => 'checkbox',
-			'std'     => 0
+			'id'      => 'pnppf_custom_gallery',
+			'desc'    => __('Drag & drop to reorder images','p12r'),
+			'type'    => 'gallery',
+			'std'     => array()
 		),
 	)
 );

@@ -1,4 +1,3 @@
-
 #pnpcg-wrapper {
 	padding: 15px 7px 0;
 	background: #FFF;
@@ -12,6 +11,7 @@
 	width: 100%;
 	line-height: 0;
 }
+
 #pnpcg-wrapper .pnpcg-image {
 	border: 1px solid #aaa;
 	float: left;
@@ -21,6 +21,7 @@
 	box-shadow: inset 0 0 15px rgba( 0, 0, 0, 0.1 ), inset 0 0 0 1px rgba( 0, 0, 0, 0.05 );
 	background: #EEE;
 }
+
 	#pnpcg-wrapper .pnpcg-image img {
 		max-width: 100%;
 	}

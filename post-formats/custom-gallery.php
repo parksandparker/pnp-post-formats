@@ -5,7 +5,7 @@
 	<div class="pnpcg-images">
 		<?php
 		// get saved images
-		$attachments = get_post_meta($post->ID, 'pnp_custom_gallery', true);
+		$attachments = get_post_meta($post->ID, 'pnppf_custom_gallery', true);
 
 		if($attachments && is_array($attachments)) {
 
@@ -15,7 +15,7 @@
 				$src = $image[0];
 				?>
 				<div class="pnpcg-image attachment">
-					<input type="hidden" name="pnpcg-images[]" value="<?php echo $attachment_id; ?>">
+					<input type="hidden" name="pnpcg_images[]" value="<?php echo $attachment_id; ?>">
 					<img src="<?php echo $src; ?>" alt="">
 					<a class="close media-modal-icon" href="#" title="Remove"></a>
 				</div>
