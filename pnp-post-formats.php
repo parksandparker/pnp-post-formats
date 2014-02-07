@@ -5,7 +5,7 @@ Description: Adds extra fields to post formats
 Plugin URI:  http://parksandparker.com
 Author:      SyamilMJ
 Author URI:  http://parksandparker.com
-Version:     0.2
+Version:     0.3
 License:     GPL2
 Text Domain: p12r
 Domain Path: lang

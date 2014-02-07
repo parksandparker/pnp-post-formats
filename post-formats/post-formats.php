@@ -25,6 +25,8 @@ if(!class_exists('PNP_Post_Formats')) {
 				add_action('wp_ajax_pnpcg_get_thumbnail', array($this, 'get_thumbnail'));
 			}
 
+			add_image_size('pnp-gallery-thumb', 200, 200, true);
+
 		}
 
 		function register_post_formats() {
