@@ -1,14 +1,14 @@
 <?php
 /**
-Plugin Name: Parks & Parker Post Formats
-Description: Adds extra fields to post formats
-Plugin URI:  http://parksandparker.com
-Author:      SyamilMJ
-Author URI:  http://parksandparker.com
-Version:     0.3
-License:     GPL2
-Text Domain: p12r
-Domain Path: lang
+ * Plugin Name: Parks & Parker Post Formats
+ * Description: Adds extra fields to post formats
+ * Plugin URI:  http://parksandparker.com
+ * Author:      SyamilMJ
+ * Author URI:  http://parksandparker.com
+ * Version:     1.0
+ * License:     GPL
+ * Text Domain: p12r
+ * Domain Path: lang
 */
 
 /**
